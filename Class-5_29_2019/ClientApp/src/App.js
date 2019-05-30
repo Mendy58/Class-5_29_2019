@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+﻿import React from 'react';
+import { render } from 'react-dom';
+import Clicker from './Clicker';
+import Display from './Display';
 
-export default class App extends Component {
-  displayName = App.name
+class App extends React.Component {
+	state = {
+		number = 0
+	}
 
-  render() {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetchdata' component={FetchData} />
-      </Layout>
-    );
-  }
+	ChangeNumber = () => {
+		this.setState(number = this.state.number +1 );
+	}
+	render() {
+		return (
+			<div>
+				<Clicker ChangeNumber={this.ChangeNumber} />
+				<Display num={this.state.number} />
+			</div>
+			);
+	}
 }
+render(<App />, document.getElementById('root'));
