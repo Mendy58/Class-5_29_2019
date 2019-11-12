@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import App from 'App';
 
 class Clicker extends React.Component {
 	render() {

@@ -5,11 +5,11 @@ import Display from './Display';
 
 class App extends React.Component {
 	state = {
-		number = 0
+		number: 0 
 	}
 
 	ChangeNumber = () => {
-		this.setState(number = this.state.number +1 );
+		this.setState({ number: this.state.number + 1 });
 	}
 	render() {
 		return (
